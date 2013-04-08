@@ -32,8 +32,8 @@ if ( !defined("__EMPLEADO__") ){
 		
 		public function getPath(){
 			$db = new DataConnection();
-			if ( $dato = mysql_fetch_assoc($result) ){
 			$result = $db->executeQuery("SELECT * FROM Area WHERE id=".$this->tipo."");	
+			if ( $dato = mysql_fetch_assoc($result) ){
 				return $dato["path"];
 			}
 			return false;		
