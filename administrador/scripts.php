@@ -66,9 +66,51 @@ function isNew()
 	{
 		window.location='AltasIngrediente.php'
 	}
+}
+</script>
+<script type="text/javascript">
+function eliEmp(curp)
+{
+	resp = confirm("\u00bfDesea eliminar el empleado?")
+	if(resp== true)
+	{
+
+		form = document.createElement('form');
+		form.id='elimina';
+		form.name='elimina';
+		form.method='POST';
+		form.action='EliminaEmpleado.php';
+
+		texto=document.createElement('input');
+		texto.id='ide';
+		texto.name='ide';
+		texto.type = 'text';
+		texto.value=curp;
+		form.appendChild(texto);
+		form.submit();
 	
-	
-	
+	}
+	else{
+		window.location="GestionEmpleado.php";
+	}
+}
+function modificarEmpleado(renglon){
+
+	form=document.createElement('form');
+	form.id='modificar';
+	form.name='modificar';
+	form.method='post';
+	form.action='ModificarEmpleado.php';
+
+	texto=document.createElement('input');
+	texto.id='ide';
+	texto.name='ide';
+	texto.type = 'text';
+	texto.value=renglon;
+	form.appendChild(texto);
+	form.submit();
+
 }
 </script> 
+
 <!-- end of scripts -->
